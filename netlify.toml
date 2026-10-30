@@ -1,0 +1,4 @@
+# Only public/ goes online. codes/, tools/ and .env stay on this Mac.
+[build]
+  publish = "public"
+  functions = "netlify/functions"

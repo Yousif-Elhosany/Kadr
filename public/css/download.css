@@ -1,0 +1,39 @@
+/* ============ download page ============ */
+.dl-page { min-height: 100vh; min-height: 100svh; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 59, 31, .12), transparent 70%), var(--bg); }
+.dl { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 96px var(--gutter) 48px; }
+.dl-card {
+  width: 100%; max-width: 620px; padding: clamp(24px, 5vw, 48px);
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-2);
+}
+.dl-rec { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--rec); }
+.dl-rec i { width: 8px; height: 8px; border-radius: 50%; background: var(--rec); animation: blink 1.4s steps(2) infinite; }
+.dl-title { margin: 14px 0 8px; font-size: clamp(34px, 6vw, 56px); }
+.dl-sub { margin: 0 0 28px; color: var(--ink-dim); }
+
+.dl-label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--ink-dim); }
+.dl-row { display: flex; gap: 10px; }
+.dl-row input {
+  flex: 1; min-width: 0; height: 54px; padding: 0 18px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  font-size: 16px; text-transform: uppercase; text-align: left;
+}
+.dl-row input::placeholder { color: var(--ink-faint); }
+.dl-row input:focus { outline: none; border-color: var(--amber); }
+.dl-row .btn[disabled] { opacity: .5; pointer-events: none; }
+@media (max-width: 520px) { .dl-row { flex-direction: column; } .dl-row input { flex: none; } }
+
+.dl-msg { min-height: 1.6em; margin: 18px 0 0; color: var(--ink-dim); }
+.dl-msg.ok { color: #5fd38a; }
+.dl-msg.err { color: var(--rec); }
+
+.dl-files { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.dl-files a {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 20px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg);
+  transition: border-color .2s, transform .2s;
+}
+.dl-files a:hover { border-color: var(--amber); transform: translateY(-2px); }
+.dl-files .arrow { color: var(--amber); font-family: var(--f-mono); }
+
+.dl-help { display: inline-block; margin-top: 28px; font-size: 14px; color: var(--ink-faint); text-decoration: underline; text-underline-offset: 4px; }
+.dl-help:hover { color: var(--ink); }

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>كادر | التحميل</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Lalezar&family=Manrope:wght@400;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/download.css">
+</head>
+<body class="dl-page">
+  <header class="nav scrolled">
+    <a class="logo" href="../"><span class="logo-mark"></span><span data-i18n="brand"></span></a>
+    <div class="nav-actions">
+      <button class="lang-btn" id="langToggle" data-i18n="ui.lang" data-i18n-aria="ui.langAria"></button>
+    </div>
+  </header>
+
+  <main class="dl">
+    <div class="dl-card">
+      <span class="dl-rec mono"><i></i>REC</span>
+      <h1 class="h-display dl-title" data-i18n="dl.title"></h1>
+      <p class="dl-sub" data-i18n="dl.sub"></p>
+
+      <form id="dlForm" class="dl-form" novalidate>
+        <label class="dl-label" for="code" data-i18n="dl.label"></label>
+        <div class="dl-row">
+          <input id="code" class="mono" name="code" dir="ltr" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="SND-XXXX-XXXX-XXXX" required>
+          <button class="btn" id="dlGo" type="submit"><span data-i18n="dl.go"></span></button>
+        </div>
+      </form>
+
+      <p class="dl-msg" id="dlMsg" role="status" aria-live="polite"></p>
+      <ul class="dl-files" id="dlFiles"></ul>
+
+      <a class="dl-help" id="dlHelp" href="#" target="_blank" rel="noopener" data-i18n="dl.help"></a>
+    </div>
+  </main>
+
+  <script src="../js/content.js"></script>
+  <script src="../js/download.js"></script>
+</body>
+</html>

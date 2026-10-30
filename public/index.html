@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>كادر | أصول مونتاج بتحكي قصة</title>
+  <meta name="description" content="كادر — أصول مونتاج للمونتيرين وصناع المحتوى: مؤثرات صوتية، LUTs، ترانزيشنز، تكستشرز. KADR — editing assets for editors and creators.">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Lalezar&family=Manrope:wght@400;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="flash" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a class="logo" href="#top"><span class="logo-mark"></span><span data-i18n="brand"></span></a>
+    <nav class="nav-links">
+      <a href="#sound" data-i18n="nav.story"></a>
+      <a href="#kit" data-i18n="nav.packs"></a>
+      <a href="#buy" data-i18n="nav.buy"></a>
+      <a href="#faq" data-i18n="nav.faq"></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="soundToggle" aria-pressed="false" data-i18n-aria="ui.sound">
+        <span class="eq"><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="lang-btn" id="langToggle" data-i18n="ui.lang" data-i18n-aria="ui.langAria"></button>
+      <a class="btn btn-sm" href="#kit"><span data-i18n="nav.cta"></span></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 00 · HERO -->
+    <section class="hero" id="top" data-chapter="ch.intro">
+      <div class="screen">
+        <canvas class="static" id="static" aria-hidden="true"></canvas>
+        <div class="scanlines" aria-hidden="true"></div>
+        <div class="vignette" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <p class="rec"><span class="rec-dot"></span>REC <span class="mono" id="heroTc">00:00:00:00</span></p>
+          <h1 class="hero-title h-display" data-i18n="hero.title" data-split></h1>
+          <p class="hero-sub" data-i18n="hero.sub"></p>
+          <div class="hero-ctas">
+            <a class="btn" href="#sound"><span data-i18n="hero.cta1"></span></a>
+            <a class="btn btn-ghost" href="#kit"><span data-i18n="hero.cta2"></span></a>
+          </div>
+        </div>
+        <div class="scroll-cue"><span data-i18n="hero.scroll"></span><i></i></div>
+        <div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- 01 · SOUND -->
+    <section class="chapter ch-sound" id="sound" data-chapter="ch.sound">
+      <div class="wrap">
+        <div class="ch-head"><span class="ch-num mono">01 / 05</span><span class="ch-label" data-i18n="ch.sound"></span></div>
+        <div class="split-2">
+          <h2 class="ch-title h-display" data-i18n="sound.title" data-split></h2>
+          <div>
+            <p class="ch-body" data-i18n="sound.body" data-reveal></p>
+            <div class="stat" data-reveal><span class="stat-num"><span data-count="1300">0</span>+</span><span data-i18n="sound.stat"></span></div>
+          </div>
+        </div>
+
+        <div class="wave-wrap" data-reveal>
+          <canvas id="wave" aria-hidden="true"></canvas>
+          <span class="wave-tag mono" data-at=".14" data-sfx="whoosh" style="left:14%">WHOOSH</span>
+          <span class="wave-tag mono" data-at=".38" data-sfx="impact" style="left:38%">IMPACT</span>
+          <span class="wave-tag mono" data-at=".62" data-sfx="riser" style="left:62%">RISER</span>
+          <span class="wave-tag mono" data-at=".86" data-sfx="glitch" style="left:86%">GLITCH</span>
+        </div>
+        <p class="hint" data-i18n="sound.hint"></p>
+
+        <p class="pads-label" data-i18n="sound.try"></p>
+        <div class="pads">
+          <button class="pad" data-sfx="whoosh"><span class="led"></span><b>Whoosh</b><small data-i18n="pad.whoosh"></small></button>
+          <button class="pad" data-sfx="impact"><span class="led"></span><b>Impact</b><small data-i18n="pad.impact"></small></button>
+          <button class="pad" data-sfx="riser"><span class="led"></span><b>Riser</b><small data-i18n="pad.riser"></small></button>
+          <button class="pad" data-sfx="glitch"><span class="led"></span><b>Glitch</b><small data-i18n="pad.glitch"></small></button>
+          <button class="pad" data-sfx="click"><span class="led"></span><b>Click</b><small data-i18n="pad.click"></small></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · COLOR (pinned, scroll grades the shot) -->
+    <section class="chapter ch-color" id="color" data-chapter="ch.color">
+      <div class="color-copy">
+        <div class="ch-head"><span class="ch-num mono">02 / 05</span><span class="ch-label" data-i18n="ch.color"></span></div>
+        <h2 class="ch-title h-display" data-i18n="color.title" data-split></h2>
+        <p class="ch-body" data-i18n="color.body"></p>
+        <div class="luts" role="group" aria-label="LUT">
+          <button class="lut" data-lut="teal" aria-pressed="true" style="--sw:linear-gradient(135deg,#0aa3a8,#ff8a3d)"><i></i>Teal &amp; Orange</button>
+          <button class="lut" data-lut="moody" aria-pressed="false" style="--sw:linear-gradient(135deg,#1b2a4a,#7d8aa8)"><i></i>Moody</button>
+          <button class="lut" data-lut="golden" aria-pressed="false" style="--sw:linear-gradient(135deg,#ffb347,#c0392b)"><i></i>Golden Hour</button>
+          <button class="lut" data-lut="noir" aria-pressed="false" style="--sw:linear-gradient(135deg,#000,#ddd)"><i></i>Noir</button>
+        </div>
+        <div class="stat color-stat"><span class="stat-num"><span data-count="330">0</span>+</span><span data-i18n="color.stat"></span></div>
+      </div>
+      <div class="color-stage">
+        <div class="scene scene-graded lut-teal" data-scene></div>
+        <div class="scene scene-log" data-scene></div>
+        <div class="split-line" aria-hidden="true"></div>
+        <span class="stage-tag tag-l" data-i18n="color.after"></span>
+        <span class="stage-tag tag-r" data-i18n="color.before"></span>
+        <div class="stage-hud mono"><span>LUT ▸ <b id="lutName">Teal &amp; Orange</b></span><span>A001_C004 · 4K · 25p</span></div>
+      </div>
+    </section>
+
+    <!-- 03 · MOTION (pinned horizontal reel) -->
+    <section class="chapter ch-motion" id="motion" data-chapter="ch.motion">
+      <div class="mtrack">
+        <div class="mintro">
+          <div class="ch-head"><span class="ch-num mono">03 / 05</span><span class="ch-label" data-i18n="ch.motion"></span></div>
+          <h2 class="ch-title h-display" data-i18n="motion.title" data-split></h2>
+          <p class="ch-body" data-i18n="motion.body"></p>
+          <p class="hint mono-ish" data-i18n="motion.hint"></p>
+        </div>
+
+        <article class="mpanel">
+          <div class="mframe"><div class="demo demo-leak"><i></i><i></i><i></i></div><span class="tc mono">00:01:12:04</span></div>
+          <span class="idx mono">A · 01</span><h3>Light Leak</h3><p data-i18n="motion.leak"></p>
+        </article>
+        <article class="mpanel">
+          <div class="mframe"><div class="demo demo-glitch"><b data-t="KADR">KADR</b></div><span class="tc mono">00:01:27:19</span></div>
+          <span class="idx mono">A · 02</span><h3>Glitch</h3><p data-i18n="motion.glitch"></p>
+        </article>
+        <article class="mpanel">
+          <div class="mframe"><div class="demo demo-burn"><i></i><i></i><i></i></div><span class="tc mono">00:01:41:02</span></div>
+          <span class="idx mono">A · 03</span><h3>Film Burn</h3><p data-i18n="motion.burn"></p>
+        </article>
+        <article class="mpanel">
+          <div class="mframe"><div class="demo demo-zoom"><b data-i18n="motion.zoomWord"></b></div><span class="tc mono">00:01:58:11</span></div>
+          <span class="idx mono">A · 04</span><h3>Zoom Punch</h3><p data-i18n="motion.zoom"></p>
+        </article>
+        <article class="mpanel">
+          <div class="mframe"><div class="demo demo-whip"></div><span class="tc mono">00:02:06:23</span></div>
+          <span class="idx mono">A · 05</span><h3>Whip Pan</h3><p data-i18n="motion.whip"></p>
+        </article>
+
+        <div class="moutro">
+          <div class="stat"><span class="stat-num"><span data-count="440">0</span>+</span><span data-i18n="motion.stat"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · TEXTURE -->
+    <section class="chapter ch-texture" id="texture" data-chapter="ch.texture">
+      <div class="wrap">
+        <div class="ch-head"><span class="ch-num mono">04 / 05</span><span class="ch-label" data-i18n="ch.texture"></span></div>
+        <div class="split-2">
+          <h2 class="ch-title h-display" data-i18n="texture.title" data-split></h2>
+          <div>
+            <p class="ch-body" data-i18n="texture.body" data-reveal></p>
+            <div class="stat" data-reveal><span class="stat-num"><span data-count="120">0</span>+</span><span data-i18n="texture.stat"></span></div>
+          </div>
+        </div>
+        <div class="tex-word h-display" data-i18n="texture.word" aria-hidden="true"></div>
+        <div class="tiles">
+          <div class="tile t-paper"><span data-i18n="texture.paper"></span></div>
+          <div class="tile t-halftone"><span data-i18n="texture.halftone"></span></div>
+          <div class="tile t-grain"><span data-i18n="texture.grain"></span></div>
+          <div class="tile t-grunge"><span data-i18n="texture.grunge"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · WORDS -->
+    <section class="chapter ch-words" id="words" data-chapter="ch.words">
+      <div class="wrap">
+        <div class="ch-head"><span class="ch-num mono">05 / 05</span><span class="ch-label" data-i18n="ch.words"></span></div>
+        <div class="split-2">
+          <h2 class="ch-title h-display" data-i18n="words.title" data-split></h2>
+          <p class="ch-body" data-i18n="words.body" data-reveal></p>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true"><div class="mrow"></div><div class="mrow"></div><div class="mrow"></div></div>
+      <div class="wrap">
+        <div class="cap-frame" data-reveal>
+          <div class="cap-person" aria-hidden="true"><i></i><i></i></div>
+          <div class="cap-safe mono" aria-hidden="true">SAFE AREA · 1920×1080</div>
+          <p class="karaoke" id="karaoke"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE KIT -->
+    <section class="chapter ch-kit" id="kit" data-chapter="ch.kit">
+      <div class="wrap">
+        <div class="ch-head"><span class="ch-num mono">▶ EXPORT</span><span class="ch-label" data-i18n="ch.kit"></span></div>
+        <div class="split-2">
+          <h2 class="ch-title h-display" data-i18n="kit.title" data-split></h2>
+          <p class="ch-body" data-i18n="kit.body" data-reveal></p>
+        </div>
+        <div class="packs" id="packs"></div>
+        <p class="note" data-i18n="kit.note"></p>
+      </div>
+    </section>
+
+    <!-- HOW TO BUY -->
+    <section class="chapter ch-buy" id="buy" data-chapter="ch.buy">
+      <div class="wrap">
+        <div class="ch-head"><span class="ch-num mono">₤</span><span class="ch-label" data-i18n="ch.buy"></span></div>
+        <h2 class="ch-title h-display" data-i18n="buy.title" data-split></h2>
+        <div class="steps">
+          <div class="step" data-reveal><div class="clap"></div><span class="n"><span data-i18n="buy.step"></span> <span class="mono">01</span></span><h3 data-i18n="buy.s1t"></h3><p data-i18n="buy.s1p"></p></div>
+          <div class="step" data-reveal><div class="clap"></div><span class="n"><span data-i18n="buy.step"></span> <span class="mono">02</span></span><h3 data-i18n="buy.s2t"></h3><p data-i18n="buy.s2p"></p></div>
+          <div class="step" data-reveal><div class="clap"></div><span class="n"><span data-i18n="buy.step"></span> <span class="mono">03</span></span><h3 data-i18n="buy.s3t"></h3><p data-i18n="buy.s3p"></p></div>
+        </div>
+        <div class="pay" data-reveal>
+          <span class="chip" style="--c:#8e44ad"><i></i>InstaPay</span>
+          <span class="chip" style="--c:#e60000"><i></i>Vodafone Cash</span>
+          <span class="chip" style="--c:#ff7900"><i></i>Orange Cash</span>
+          <span class="chip" style="--c:#ffb000"><i></i><span data-i18n="buy.wallet"></span></span>
+          <a class="btn" id="waGeneral" href="#" target="_blank" rel="noopener"><span data-i18n="buy.cta"></span></a>
+          <a class="btn btn-ghost" href="download/"><span data-i18n="buy.have"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="chapter ch-faq" id="faq" data-chapter="ch.faq">
+      <div class="wrap">
+        <div class="ch-head"><span class="ch-num mono">?</span><span class="ch-label" data-i18n="ch.faq"></span></div>
+        <h2 class="ch-title h-display" data-i18n="faq.title" data-split></h2>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- THE END (pinned iris-out) -->
+    <section class="ch-end" id="end" data-chapter="ch.end">
+      <div class="end-iris"><div class="scene lut-golden" data-scene></div><div class="vignette"></div></div>
+      <div class="end-dark"></div>
+      <div class="end-content">
+        <h2 class="end-title h-display" data-i18n="end.title" data-split></h2>
+        <p class="end-sub" data-i18n="end.sub"></p>
+        <a class="btn end-cta" href="#kit"><span data-i18n="end.cta"></span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <a class="logo" href="#top"><span class="logo-mark"></span><span data-i18n="brand"></span></a>
+      <a href="download/" data-i18n="buy.have"></a>
+      <p data-i18n="foot.rights"></p>
+      <p class="mono">CUT FRAME BY FRAME</p>
+    </div>
+  </footer>
+
+  <!-- timeline HUD: the page is the timeline -->
+  <div class="hud" aria-hidden="true">
+    <span class="mono hud-tc" id="tc">00:00:00:00</span>
+    <div class="hud-track"><div class="hud-marks"></div><div class="hud-fill"></div><div class="hud-head"></div></div>
+    <span class="hud-ch" id="hudCh"></span>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
